@@ -73,7 +73,7 @@ const Signup = (): JSX.Element => {
         <>
           <Box display="flex">
             <Image
-              height="30px"
+              height="60px"
               ml="auto"
               mr="auto"
               my="40px"

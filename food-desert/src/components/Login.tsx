@@ -54,10 +54,10 @@ const Login = () => {
       return (
         <>
           <Box display="flex" justifyContent="center" alignItems="center" my="40px">
-            <Image height="20px" mt="2" src="/trello-icon.svg" alt="brand logo"></Image>
-            <Text fontWeight="bold" fontSize="28px" m="4px">
-              Trello
-            </Text>
+            <Image height="50px" mt="2" src="/hrfsmall.jpeg" alt="brand logo"></Image>
+            {/* <Text fontWeight="bold" fontSize="28px" m="4px">
+              Human Rights First
+            </Text> */}
           </Box>
     
           <Flex
@@ -87,6 +87,15 @@ const Login = () => {
               borderRadius="3px"
               bg="white"
               boxShadow="rgb(0 0 0 / 10%) 0 0 10px">
+                  <Image
+            //   position="absolute"
+              
+            //   bottom="5%"
+            //   left="5%"
+              src="/hrf-logo.png"
+              alt=" team work illustration"
+              width={[0, '25%']}
+            />      
               <Box
                 textAlign="center"
                 color="#5E6C84"

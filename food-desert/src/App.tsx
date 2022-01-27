@@ -1,12 +1,14 @@
-import React from 'react';
-import './App.css';
-import Login from './components/Login';
-import Signup from './components/Signup';
+import React from "react";
+import "./App.css";
+import Login from "./components/Login";
+import Questionaire from "./components/Questionaire";
+import Signup from "./components/Signup";
 
 function App() {
   return (
     <div className="App">
-      {/* <Signup/> */}
+      <Questionaire />
+      <Signup/>
       <Login />
     </div>
   );

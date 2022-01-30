@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import "./Questionaire.css";
+import { Box } from "@chakra-ui/react";
 import {
   Checkbox,
   Stack,
   CheckboxGroup,
   Flex,
-  Box,
   FormControl,
   Input,
   Button,
@@ -18,6 +18,11 @@ import {
   CloseButton,
   AlertTitle,
   AlertIcon,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+  SliderMark,
 } from "@chakra-ui/react";
 
 function Questionaire() {
@@ -61,15 +66,16 @@ function Questionaire() {
 
       <Box
         display="flex"
-        flexDirection="row"
+        flexDirection="column"
         justifyContent="center"
         alignItems="center"
-        p="25px 40px"
-        width={["90%", "90%", "85%", "45%"]}
-        borderRadius="3px"
-        bg="white"
-        boxShadow="rgb(0 0 0 / 10%) 0 0 10px"
-      ></Box>
+      >
+        <h1>Welcome New Volunteer!</h1>
+        <h2>
+          Please fill out this additional information for us to get to know you
+          better!
+        </h2>
+      </Box>
 
       <Box
         display="flex"
@@ -77,45 +83,51 @@ function Questionaire() {
         justifyContent="spaceBetween"
         alignItems="center"
         width="100vw"
-        border="1px solid black"
       >
-        
-        
         <Box
-        display="flex"
-        flexDirection="column"
-        justifyContent="spaceAround"
-        // alignItems="center"
-        width="100vw"
-        border="1px solid black" 
+          display="flex"
+          flexDirection="column"
+          justifyContent="spaceBetween"
+          alignItems="center"
+          textAlign="center"
+          width="80vw"
         >
-
-        
-        <FormControl
-          isRequired
-        >
-          Please enter your phone number to recieve updates
-          <Input
-            type="phone"
-            name="phone"
-            value={values.phone}
-            placeholder="Enter Phone"
-            onChange={handleChange}
-            autoComplete="off"
-          />
-          {/* {emailErr && <p color="red">Invalid email.</p>} */}
-        </FormControl>
-        <FormControl my="4" isRequired>
-          Please enter your zip code to match with nearest organization
-          <Input
-            type="text"
-            name="zip"
-            value={values.zip}
-            placeholder="Zip Code"
-            onChange={handleChange}
-            autoComplete="off"
-          />
-        </FormControl>
+          <FormControl
+            isRequired
+            display="flex"
+            flexDirection="row"
+            justifyContent="spaceBetween"
+            alignItems="center"
+          >
+            <p>Please enter your phone number to recieve updates</p>
+            <Input
+              type="phone"
+              name="phone"
+              value={values.phone}
+              placeholder="Enter Phone"
+              onChange={handleChange}
+              autoComplete="off"
+            />
+            {/* {emailErr && <p color="red">Invalid email.</p>} */}
+          </FormControl>
+          <FormControl
+            my="4"
+            isRequired
+            display="flex"
+            flexDirection="row"
+            justifyContent="spaceBetween"
+            alignItems="center"
+          >
+            <p>Please enter your zip code to match with nearest organization</p>
+            <Input
+              type="text"
+              name="zip"
+              value={values.zip}
+              placeholder="Zip Code"
+              onChange={handleChange}
+              autoComplete="off"
+            />
+          </FormControl>
         </Box>
 
         <Stack
@@ -124,10 +136,10 @@ function Questionaire() {
           spacing={20}
           alignItems="center"
           textAlign="center"
-          border="1px solid black"  
-          width="80"
+          width="80%"
+          fontSize="25px"
         >
-          <p>How are you willing to Volunteer?</p>
+          <h3>How are you willing to Volunteer?</h3>
           <Checkbox>Pick up/Drop off</Checkbox>
           <Checkbox>Food Preparation</Checkbox>
           <Checkbox>Packing (Non Cooking)</Checkbox>
@@ -139,17 +151,162 @@ function Questionaire() {
           mt={1}
           spacing={20}
           alignItems="center"
-          border="1px solid black"
-          width="100"
-          // textAlign="center"
+          textAlign="center"
+          width="80%"
+          fontSize="25px"
+
         >
-          <p>Please check which apply to you!</p>
+          <h3>Please check which apply to you!</h3>
           <Checkbox>Experience with food prep?</Checkbox>
           <Checkbox>Do you own a vehicle?</Checkbox>
         </Stack>
 
-        <Stack spacing={5} direction="row" border="1px solid black"></Stack>
+        <Stack
+          spacing={5}
+          align="center"
+          direction="column"
+          width="80%"
+          fontSize="25px"
+        >
+          <h3>When can you generally volunteer?</h3>
+          <Stack
+            spacing={20}
+            align="center"
+            direction="column"
+            width="20%"
+          >
+            <Stack
+            spacing={40}
+            align="center"
+            direction="row"
+            width="80"
+            border="1px solid black"
+          >
+            <Checkbox>Sunday</Checkbox>{" "}
+            <Checkbox>AM</Checkbox>
+            <Checkbox>PM</Checkbox>
+            </Stack>
+            <Stack
+            spacing={40}
+            align="center"
+            direction="row"
+            width="80"
+            border="1px solid black"
+          >
+            <Checkbox>Monday</Checkbox> <Checkbox direction="row">AM</Checkbox>
+            <Checkbox direction="row">PM</Checkbox> </Stack>
+            
+            <Stack
+            spacing={40}
+            align="center"
+            direction="row"
+            width="80"
+            border="1px solid black"
+          >
+            <Checkbox>Tuesday</Checkbox>
+            <Checkbox direction="row">AM</Checkbox>
+            <Checkbox direction="row">PM</Checkbox>
+            </Stack>
+            <Stack
+            align="center"
+            direction="row"
+            width="80"
+            border="1px solid black"
+            spacing={25}
+          >
+            <Checkbox>Wednesday</Checkbox>{" "}
+            <Checkbox direction="row">AM</Checkbox>
+            <Checkbox direction="row">PM</Checkbox>
+            </Stack>
+            <Stack
+            align="center"
+            direction="row"
+            width="80"
+            border="1px solid black"
+            spacing={40}
+          >
+            <Checkbox>Thursday</Checkbox>{" "}
+            <Checkbox direction="row">AM</Checkbox>
+            <Checkbox direction="row">PM</Checkbox>
+          </Stack>
+          <Stack
+            align="center"
+            direction="row"
+            width="80"
+            border="1px solid black"
+            spacing={60}
+          >
+            <Checkbox>Friday</Checkbox> <Checkbox direction="row">AM</Checkbox>
+            <Checkbox direction="row">PM</Checkbox>
+            </Stack>
+            <Stack
+            align="center"
+            direction="row"
+            width="80"
+            border="1px solid black"
+            spacing={40}
+          >
+            <Checkbox>Saturday</Checkbox>{" "}
+            <Checkbox direction="row">AM</Checkbox>
+            <Checkbox direction="row">PM</Checkbox>
+            </Stack>
+          </Stack>
+        </Stack>
+        <Box
+          overflowY="scroll"
+          overflowX="scroll"
+          bgSize="100px"
+          bgRepeat="repeat"
+        >
+          <h3>Distance you are willing to travel?</h3>
+          <Slider
+            aria-label="slider-ex-1"
+            defaultValue={30}
+            border="1px solid black"
+            height="40px"
+          >
+            <SliderTrack>
+              <SliderFilledTrack />
+            </SliderTrack>
+            <SliderThumb />
+          </Slider>
+
+          {/* <Slider aria-label='slider-ex-1' defaultValue={30}>
+        <SliderTrack>
+        <SliderFilledTrack />
+        </SliderTrack>
+        <SliderThumb />
+        </Slider> */}
+        </Box>
+
+        <Box
+          overflowY="scroll"
+          overflowX="scroll"
+          bgSize="100px"
+          bgRepeat="repeat"
+        >
+          <h3>How much time can you spend volunteering for a single task?</h3>
+          <Slider
+            aria-label="slider-ex-1"
+            defaultValue={30}
+            border="1px solid black"
+            height="40px"
+          >
+            <SliderTrack>
+              <SliderFilledTrack />
+            </SliderTrack>
+            <SliderThumb />
+          </Slider>
+
+          {/* <Slider aria-label='slider-ex-1' defaultValue={30}>
+        <SliderTrack>
+        <SliderFilledTrack />
+        </SliderTrack>
+        <SliderThumb />
+        </Slider> */}
+        </Box>
       </Box>
+
       <Button
         fontWeight="semibold"
         width="full"
